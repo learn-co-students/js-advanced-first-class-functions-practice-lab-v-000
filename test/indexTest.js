@@ -5,44 +5,44 @@ describe('drivers', function() {
   {name: 'Sammy', hometown: 'New York', revenue: 2000}, {name: "Sally", hometown: 'Pittsburgh', revenue: 2500},
   {name: "Annette", hometown: "Los Angelos", revenue: 6000}, {name: "Bobby", hometown: "Tampa Bay", revenue: 5000}]
 
-  describe('logDriverNames', function() {
-    let spy;
-
-    beforeEach(()=> {
-      spy = sinon.spy(console, 'log');
-    })
-
-    afterEach(() => {
-      spy.restore();
-    });
-    it("logs each of the driver's names", function() {
-      logDriverNames(drivers)
-      expect(spy.calledWithExactly("Bobby")).to.be.true
-      expect(spy.calledWithExactly("Sammy")).to.be.true
-      expect(spy.calledWithExactly("Sally")).to.be.true
-      expect(spy.calledWithExactly("Annette")).to.be.true
-      expect(spy.calledWithExactly("Bobby")).to.be.true
-    })
-  })
-
-  describe('logDriversByHometown', function(){
-    let spy;
-
-    beforeEach(()=> {
-      spy = sinon.spy(console, 'log');
-    })
-
-    afterEach(() => {
-      spy.restore();
-    });
-
-    it("logs each of the driver's names if they are from passed through hometown", function() {
-      logDriversByHometown(drivers, "Pittsburgh")
-      expect(spy.calledWithExactly("Bobby")).to.be.true
-      expect(spy.calledWithExactly("Sally")).to.be.true
-      expect(spy.calledWithExactly("Annette")).to.not.be.true
-    })
-  })
+  //describe('logDriverNames', function() {
+    //let spy;
+//
+    //beforeEach(()=> {
+      //spy = sinon.spy(console, 'log');
+    //})
+//
+    //afterEach(() => {
+      //spy.restore();
+    //});
+    //it("logs each of the driver's names", function() {
+      //logDriverNames(drivers)
+      //expect(spy.calledWithExactly("Bobby")).to.be.true
+      //expect(spy.calledWithExactly("Sammy")).to.be.true
+      //expect(spy.calledWithExactly("Sally")).to.be.true
+      //expect(spy.calledWithExactly("Annette")).to.be.true
+      //expect(spy.calledWithExactly("Bobby")).to.be.true
+    //})
+  //})
+//
+  //describe('logDriversByHometown', function(){
+    //let spy;
+//
+    //beforeEach(()=> {
+      //spy = sinon.spy(console, 'log');
+    //})
+//
+    //afterEach(() => {
+      //spy.restore();
+    //});
+//
+    //it("logs each of the driver's names if they are from passed through hometown", function() {
+      //logDriversByHometown(drivers, "Pittsburgh")
+      //expect(spy.calledWithExactly("Bobby")).to.be.true
+      //expect(spy.calledWithExactly("Sally")).to.be.true
+      //expect(spy.calledWithExactly("Annette")).to.not.be.true
+    //})
+  //})
   
   describe('driversByRevenue', function() {
     it('uses the sort function to returns the drivers from lowest to highest by the revenue they brought in', function() {
