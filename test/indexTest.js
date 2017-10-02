@@ -43,7 +43,7 @@ describe('drivers', function() {
       expect(spy.calledWithExactly("Annette")).to.not.be.true
     })
   })
-  
+
   describe('driversByRevenue', function() {
     it('uses the sort function to returns the drivers from lowest to highest by the revenue they brought in', function() {
       expect(driversByRevenue(drivers)[0].name).to.eql("Sammy")
