@@ -14,18 +14,16 @@ const logDriversByHometown = function(list, location) {
 };
 
 const driversByRevenue = function(list) {
-  let sortedByRevenue = list.sort(function (driverA, driverB) {
+  return list.slice().sort(function (driverA, driverB) {
     return driverA.revenue - driverB.revenue;
   });
-  return sortedByRevenue;
 };
 
 const driversByName = function(list) {
-  let sortedByName = list.sort(function (driverA, driverB) {
+  return list.slice().sort(function (driverA, driverB) {
     return driverA.name.localeCompare(driverB.name);
   });
-  return sortedByName;
-};
+}
 
 const totalRevenue = function(list) {
   return list.reduce(function (total, currentDriver) {
