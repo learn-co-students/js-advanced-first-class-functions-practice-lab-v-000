@@ -63,7 +63,7 @@ describe('index.js', function () {
     });
   });
   
-  describe('driversByRevenue()', function () {
+  describe('logDriversByHometown()', function () {
     it('uses the sort() method to return a new array of drivers ordered by revenue (lowest to highest)', function () {
       expect(driversByRevenue(drivers)[0].name).to.eql('Sally');
 
