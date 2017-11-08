@@ -25,6 +25,10 @@ const driversByName = function (drivers) {
 
 const totalRevenue = function (drivers) {
   return drivers.reduce(function (lara, tree) {
-      return lara + tree.revenue; // HOW DOES IT KNOW THAT lara IS agg AND tree IS el? 
+      return lara + tree.revenue; // HOW DOES IT KNOW THAT 'lara' IS 'agg' AND 'tree' IS 'el'?
   }, 0);
+};
+
+const averageRevenue = function (drivers) {
+  return totalRevenue(drivers) / drivers.length;
 };
