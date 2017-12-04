@@ -14,14 +14,14 @@ function logDriversByHometown(drivers, matcher) {
 }
 
 function driversByRevenue(drivers) {
-  let newDrivers = drivers
+  let newDrivers = Object.assign([], drivers)
   let compare = makeCompare('revenue')
   return newDrivers.sort(compare)
 }
 
 function driversByName(drivers) {
   let compare = makeCompare('name')
-  let newDrivers = drivers
+  let newDrivers = Object.assign([], drivers)
   return newDrivers.sort(compare)
 }
 

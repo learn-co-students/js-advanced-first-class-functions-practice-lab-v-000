@@ -11,9 +11,9 @@ describe('index.js', function () {
 
   const driversCopy = [...drivers];
 
-  // afterEach(function () {
-  //   expect(drivers, 'MAKE SURE YOUR ARRAY MANIPULATIONS ARE NON-DESTRUCTIVE').to.eql(driversCopy);
-  // });
+  afterEach(function () {
+    expect(drivers, 'MAKE SURE YOUR ARRAY MANIPULATIONS ARE NON-DESTRUCTIVE').to.eql(driversCopy);
+  });
 
   describe('logDriverNames()', function () {
     let spy;
