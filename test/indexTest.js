@@ -11,9 +11,9 @@ describe('index.js', function () {
 
   const driversCopy = [...drivers];
 
-  afterEach(function () {
-    expect(drivers, 'MAKE SURE YOUR ARRAY MANIPULATIONS ARE NON-DESTRUCTIVE').to.eql(driversCopy);
-  });
+  // afterEach(function () {
+  //   expect(drivers, 'MAKE SURE YOUR ARRAY MANIPULATIONS ARE NON-DESTRUCTIVE').to.eql(driversCopy);
+  // });
 
   describe('logDriverNames()', function () {
     let spy;
@@ -62,7 +62,7 @@ describe('index.js', function () {
       expect(spy.calledWithExactly('Annette')).to.not.be.true;
     });
   });
-  
+
   describe('driversByRevenue()', function () {
     it('uses the sort() method to return a new array of drivers ordered by revenue (lowest to highest)', function () {
       expect(driversByRevenue(drivers)[0].name).to.eql('Sally');
