@@ -38,9 +38,21 @@ function makeCompare(key) {
   }
 }
 
+// const driversByRevenue = function (drivers) {
+//   return drivers.slice().sort(function (driverOne, driverTwo) {
+//     return driverOne.revenue - driverTwo.revenue;
+//   });
+// };
+//
+// const driversByName = function (drivers) {
+//   return drivers.slice().sort(function (driverOne, driverTwo) {
+//     return driverOne.name.localeCompare(driverTwo.name);
+//   });
+// };
+
 function totalRevenue(drivers) {
   return drivers.reduce(
-    (accumulator, currentValue, currentIndex, array) => {
+    (accumulator, currentValue) => {
       return accumulator + currentValue.revenue;
     }, 0
   );
