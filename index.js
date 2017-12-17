@@ -7,6 +7,12 @@ function logDriverNames(drivers) {
     console.log(driver.name);
   });
 };
+// could also try naming conventions like this:
+// const logDriverNames = function (drivers) {
+//   drivers.forEach(function (driver) {
+//     console.log(driver.name);
+//   });
+// };
 
 
 // logDriversByHometown() — Receives an array of driver objects as the first argument and a location as the second
