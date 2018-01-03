@@ -1,40 +1,38 @@
 // Code your solution in this file!
-function logDriverNames(drivers) {
-  for (const driver of drivers) {
-    console.log(`${driver.name}`);
-  }
+const logDriverNames = function (drivers) {
+  drivers.forEach(function (driver) {
+    console.log(driver.name);
+  });
 }
 
-function logDriversByHometown(drivers, hometown) {
-  for (const driver of drivers) {
+const logDriversByHometown = function (drivers, hometown) {
+  drivers.forEach(function (driver) {
     if (driver.hometown === hometown) {
-      console.log(`${driver.name}`);
+      console.log(driver.name);
     }
-  }
+  });
 }
 
-function driversByRevenue(drivers) {
-  let sortedRevenues = drivers.slice().sort(function(a,b){
+const driversByRevenue = function (drivers) {
+  return drivers.slice().sort(function(a,b) {
     return a.revenue > b.revenue;
   });
-  return sortedRevenues;
 }
 
-function driversByName(drivers) {
-  let sortedNames = drivers.slice().sort(function(a,b){
+const driversByName = function (drivers) {
+  return drivers.slice().sort(function(a,b) {
     return a.name > b.name;
   });
-  return sortedNames;
 }
 
-const revenues = function sumRevenue(agg, el){
-  return agg + el.revenue;
+const revenues = function sumRevenue(total, driver) {
+  return total + driver.revenue;
 }
 
 function totalRevenue(drivers) {
   return drivers.reduce(revenues, 0);
 }
 
-function averageRevenue(drivers){
+const averageRevenue = function (drivers) {
   return totalRevenue(drivers) / drivers.length;
 }
