@@ -21,4 +21,22 @@ const driversByRevenue = function (arr, revenue){
   });
 };
 
-const driversByName
+
+const driversByName = function (arr) {
+  const arrCopy = arr.slice()
+  return arrCopy.sort(function (a, b) {
+    return a.name.localeCompare(b.name);
+  });
+};
+
+const totalRevenue = function (arr) {
+  let revSum = 0
+  arr.forEach(function (driver) {
+    revSum += driver.revenue
+  })
+  return revSum
+}
+
+const averageRevenue = function (arr) {
+  return totalRevenue(arr) / arr.length
+}
