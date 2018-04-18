@@ -38,6 +38,8 @@ const totalRevenue = function (drivers) {
   }, 0);
 }
 // total is the aggregator, defined by the initial value argument passed into .reduce(callback, inivitalValue)
+// callback functions passed into reduce have 4 arguments:
+// fn (accumulator, currentValue, currentIndex, array) {}
 
 const averageRevenue = function (drivers) {
   return (totalRevenue(drivers) / drivers.length);
