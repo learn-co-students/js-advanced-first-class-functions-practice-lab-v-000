@@ -13,18 +13,14 @@ function logDriversByHometown(drivers, location) {
 }
 
 function driversByRevenue(drivers) {
-  const toSortDrivers = drivers.slice();
-  return toSortDrivers.sort( function(a,b) {
+  return drivers.slice().sort( function(a,b) {
     return a.revenue - b.revenue;
   });
 }
 
 function driversByName(drivers) {
-  const toSortDrivers = drivers.slice();
-  return toSortDrivers.sort ( function(a,b) {
-    aName = a.name;
-    bName = b.name;
-    return aName.localeCompare(b.name);
+  return drivers.slice().sort ( function(a,b) {
+    return a.name.localeCompare(b.name);
   });
 }
 
@@ -35,5 +31,5 @@ function totalRevenue(drivers) {
 }
 
 function averageRevenue(drivers) {
-  return totalRevenue(drivers)/drivers.length
+  return totalRevenue(drivers)/drivers.length;
 }
