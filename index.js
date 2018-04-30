@@ -1,16 +1,13 @@
 // Code your solution in this file!
 function logDriverNames(drivers){
-  for (const element of drivers) {
-    console.log(element.name);
-  }
+  const callback = function (el, i, arr) {console.log(el.name)}
+  drivers.forEach(callback);
 }
 
 function logDriversByHometown(drivers, location){
-  for (const element of drivers) {
-    if (element.hometown === location){
-      console.log(element.name);
-    }
-  }
+  const callback = function (el, i, arr){
+    if (el.hometown === location){ console.log(el.name) }}
+  drivers.forEach(callback);
 }
 
 function driversByRevenue(drivers){
