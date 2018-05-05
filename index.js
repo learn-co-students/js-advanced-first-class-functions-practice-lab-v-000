@@ -16,6 +16,8 @@ function logDriversByHometown(driver, location) {
   });
 }
 
-function driversByRevenue(driver) {
-  const sorted = driver.sort(driver.revenue)
+const driversByRevenue = function (driver) {
+    driver.slice().sort(function(d1, d2){
+      d1.revenue - d2.revenue;
+    });
 }
