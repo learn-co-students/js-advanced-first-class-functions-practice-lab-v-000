@@ -27,18 +27,15 @@ function driversByName(arr) {
   })
 }
 
+
+
 function totalRevenue(arr) {
-  let revenue = 0;
-  arr.forEach(function(driver) {
-    revenue += driver.revenue
-  })
-  return revenue;
+  return arr.reduce(function(total, driver) {
+    return driver.revenue + total;
+  }, 0); 
+};
+
+const averageRevenue = function(arr) {
+  return totalRevenue(arr) / arr.length;
 }
 
-function averageRevenue(arr) {
-  let revenue = 0;  
-  arr.forEach(function(driver) {
-    revenue += driver.revenue
-  })
-  return (revenue / arr.length);
-}
