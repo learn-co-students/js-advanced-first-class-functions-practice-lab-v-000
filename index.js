@@ -1,22 +1,36 @@
 // Code your solution in this file!
 
-function logDriverNames(list) {
+ const logDriverNames = function (list) {
   return list.map(function(driver){
     console.log(driver.name);
   });
 }
-//filter by key = name then console log each element in the array
-// do the filter by hometown, then call logDriverNames on that array
 
-function logDriversByHometown (list, hometown) {
+ const logDriversByHometown = function (list, hometown) {
   return logDriverNames( list.filter(function (driver){
     return driver.hometown === hometown;
     })
   );
 }
 
-function driversByRevenue (list) {
-  return logDriverNames (list.sort(function (driver){
-    return driver.revenue;
-  }));
+ const driversByRevenue = function (list) {
+   return list.slice().sort(function (driverOne, driverTwo){
+     return driverOne.revenue - driverTwo.revenue;
+   });
 }
+
+const driversByName = function (list) {
+  return list.slice().sort(function (driverOne, driverTwo){
+    return driverOne.name.localeCompare(driverTwo.name);
+  });
+}
+
+const totalRevenue = function (drivers) {
+  return drivers.reduce(function (total, currentDriver) {
+    return currentDriver.revenue + total;
+  }, 0);
+};
+
+const averageRevenue = function (drivers) {
+  return totalRevenue(drivers) / drivers.length;
+};
