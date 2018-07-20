@@ -12,20 +12,22 @@ const logDriversByHometown = function(array, str) {
 }
 
 const driversByRevenue = function(array) {
-   const newArray = array.sort(function(a, b) {
-    return a.revenue - b.revenue;
-  })
-  return newArray
+  return array.slice(0).sort(function(a, b) {
+   return a.revenue - b.revenue;
+ })
 }
 
 const driversByName = function(array) {
-
+  return array.slice(0).sort(function(a, b) {
+    return a.name.localeCompare(b.name)
+  })
 }
 
 const totalRevenue = function(array) {
-
+  return array.reduce(function(total, obj) {
+    return obj.revenue + total}, 0)
 }
 
 const averageRevenue = function(array) {
-
+  return totalRevenue(array)/array.length
 }
