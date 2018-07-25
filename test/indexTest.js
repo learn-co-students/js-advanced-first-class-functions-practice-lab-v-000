@@ -9,7 +9,8 @@ describe('index.js', function () {
     { name: 'Bobby',   hometown: 'Tampa Bay',   revenue: 5000 }
   ];
 
-
+  const driversCopy = [...drivers];
+  
   afterEach(function () {
     expect(drivers, 'MAKE SURE YOUR ARRAY MANIPULATIONS ARE NON-DESTRUCTIVE').to.eql(driversCopy);
   });
