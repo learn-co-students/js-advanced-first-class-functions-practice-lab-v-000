@@ -12,11 +12,12 @@ function driversByRevenue(drivers) {
 }
 
 function driversByName(drivers) {
-  return drivers.slice(0).sort((a, b) => a.name.toLowerCase() > b.name.toLowerCase());
+  return drivers.slice(0).sort((a, b) => a.name.localeCompare(b.name));
 }
 
 function totalRevenue(drivers) {
-  return drivers.slice(0).map(driver => driver.revenue).reduce((a, b) => a + b);
+  // return drivers.slice(0).map(driver => driver.revenue).reduce((a, b) => a + b);
+  return drivers.slice(0).reduce(((total, driver) => driver.revenue + total), 0);
 }
 
 function averageRevenue(drivers) {
