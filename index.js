@@ -50,3 +50,8 @@ function totalRevenue(drivers){
 const reduceRev = function (totalRev, driver, index, drivers){
     return totalRev + driver.revenue;
 }
+
+function averageRevenue(drivers){
+    return (drivers.reduce(reduceRev, 0))/ (drivers.length);
+}
+
