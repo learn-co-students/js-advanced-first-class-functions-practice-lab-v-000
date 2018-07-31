@@ -47,6 +47,7 @@ function driversByName(drivers) {
 
 // Receives an array of driver objects
 // Returns the sum of the revenue earned by each driver
+// Next time you can use .reduce instead of .forEach, then you can pass the total number in as an argument
 const totalRevenue = function(drivers) {
   let totalRevenue = 0;
 
