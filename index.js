@@ -30,8 +30,25 @@ function driversByName(drivers) {
 }
 
 function totalRevenue(drivers) {
-  
+  const totalRevDrivers = [...drivers]
+  let total = 0
+    totalRevDrivers.forEach(function (driver) {
+  	total += driver.revenue;
+  	});
+  	return total;
 }
+
+function averageRevenue(drivers) {
+  const avgRevDrivers = [...drivers]
+  let avg = 0
+  let total = 0
+    avgRevDrivers.forEach(function (driver) {
+  	total += driver.revenue;
+  	avg = total/drivers.length
+  	});
+  	return avg;
+}
+
 
 
 
