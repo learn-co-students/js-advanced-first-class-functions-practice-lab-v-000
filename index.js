@@ -21,7 +21,7 @@ const driversByName = drivers => {
 }
 
 const totalRevenue = drivers => {
-  return [...drivers].reduce((agg, el) => agg += el.revenue, 0)
+  return [...drivers].reduce((total, driver) => total += driver.revenue, 0)
 }
 
 const averageRevenue = drivers => {
