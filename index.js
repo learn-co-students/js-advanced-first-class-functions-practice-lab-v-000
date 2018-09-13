@@ -14,3 +14,28 @@ function logDriversByHometown(drivers, city) {
     }
   }
 }
+
+function driversByRevenue(drivers) {
+  let newarray = [...drivers]
+  newarray.sort(function(a, b){return a.revenue - b.revenue})
+  return newarray
+}
+
+function driversByName(drivers) {
+  let newarray = [...drivers]
+  newarray.sort(function(a, b){return a.name.localeCompare(b.name)})
+  return newarray
+}
+
+function addUpRevenues(total, num) {
+  return total + num.revenue
+}
+
+function totalRevenue(drivers) {
+  return drivers.reduce(addUpRevenues, 0)
+}
+
+function averageRevenue(drivers) {
+  let total = totalRevenue(drivers)
+  return total / drivers.length
+}
