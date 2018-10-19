@@ -15,13 +15,13 @@ function logDriversByHometown(driver, location){
 
 //  at first wanted to do something like.... this.driversByRevenue.sort((a,b) => b.revenue < a.revenue ? 1 : -1)
 
-const driversByRevenue = function(driver) {
+let driversByRevenue = function(driver) {
   return driver.slice().sort(function(a,b){
     return a.revenue - b.revenue
   })
 }
 
-const driversByName = function(driver){
+let driversByName = function(driver){
   return driver.slice().sort(function(a,b){
     return  a.name.localeCompare(b.name)
   })
