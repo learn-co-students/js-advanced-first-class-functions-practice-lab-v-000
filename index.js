@@ -21,6 +21,7 @@ let driversByRevenue = function(driver) {
   })
 }
 
+// would have never thought to use localCompare without doing research
 let driversByName = function(driver){
   return driver.slice().sort(function(a,b){
     return  a.name.localeCompare(b.name)
