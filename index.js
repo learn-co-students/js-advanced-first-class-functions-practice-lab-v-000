@@ -13,19 +13,21 @@ const logDriversByHometown = function (drivers, location) {
   });
 };
 
+const mapDrivers = function (drivers) {
+  return drivers.map (function (drivers) {
+    return drivers
+  });
+};
+
 const driversByRevenue = function (drivers) {
-  return drivers.map( function (drivers) {
-    return drivers })
-    .sort(function (driver1, driver2) {
+  return mapDrivers(drivers).sort(function (driver1, driver2) {
       return driver1.revenue - driver2.revenue
     });
   };
 
 
 const driversByName = function (drivers) {
-  return drivers.map (function (drivers) {
-    return drivers })
-    .sort(function (driver1, driver2) {
+  return mapDrivers(drivers).sort(function (driver1, driver2) {
       return driver1.name.localeCompare(driver2.name);
     });
   };
