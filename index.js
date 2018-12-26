@@ -1,25 +1,35 @@
 // Code your solution in this file!
+//how to creata a constant logDriversNames assigned to anonymous function with drivers array argument
 const logDriverNames = function (drivers) {
+//how to iterate of drivers array and want to execute a function 1x for ea element with cb argument
 drivers.forEach(function(el){
+//how to output to console the element's name
   console.log(el.name);
 });
 };
-
+//how to creata a constant logDriversByHometown assigned to anonymous function with drivers array and location argument
 const logDriversByHometown = function (drivers, location) {
+//how to iterate of drivers array and want to execute a function 1x for ea element with cb argument
     return drivers.forEach(function(element) {
+//how to determine if the element hometown value is strictly equivalent to location argument
         if(element.hometown === location) {
+//how to output to console the element's name when its prereq is met.
             console.log(element.name)
         }
     })
 }
+//how to create a constant driversByRevenue assigned to anonymous function() with drivers array argument
 const driversByRevenue = function (drivers) {
-  debugger;
+//  debugger;
+//how to assign to a variable, a new Object of new array with drivers array as argument
   let newArray = Object.create(drivers);
-  debugger;
+//  debugger;
+//how to output sorted function of the new variable
    return newArray.sort(function (a, b) {
+//how to output and sort with callback function of 2 integer arguments in ascending order
        return a.revenue - b.revenue
    });
- }
+ };
 // how to create a function driversByName and pass in drivrs ARRAY
 function driversByName(drivers) {
  //how to create a new object instance
@@ -41,8 +51,9 @@ drivers.forEach(function(driver) {
 //how to recall totalRevenue from memory?
 return totalRevenue;
 };
-//how to create a constant averageRevenue assigned to function() with drivers array?
+//how to create a constant averageRevenue assigned to anonymous function() with drivers array argument?
 const averageRevenue = function(drivers) {
-//how to output a calculated average revenue per drivers? numerator is totalRevenue(drivers), denominator is drivers.length
+//how to output a calculated average revenue per drivers? numerator is totalRevenue(drivers),
+//denominator is drivers.length
 return totalRevenue(drivers) / drivers.length;
 };
