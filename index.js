@@ -28,10 +28,10 @@ return  drivers.slice().sort(function (a, b) {
 
 
 const totalRevenue = function (drivers) {
-    return drivers.reduce(genericReduce, 0);
+    return drivers.reduce(driverReduce, 0);
 };
 
-const genericReduce = function (total, currentDriver) {
+const driverReduce = function (total, currentDriver) {
 return currentDriver.revenue + total;
 }
 
