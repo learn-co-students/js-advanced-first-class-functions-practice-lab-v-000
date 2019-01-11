@@ -85,9 +85,9 @@ describe('index.js', function () {
     });
   });
 
-  // describe('averageRevenue()', function () {
-  //   it('calculates the average revenue across all drivers', function () {
-  //     expect(averageRevenue(drivers)).to.equal(3700);
-  //   });
-  // });
+  describe('averageRevenue()', function () {
+    it('calculates the average revenue across all drivers', function () {
+      expect(averageRevenue(drivers)).to.equal(3700);
+    });
+  });
 });
