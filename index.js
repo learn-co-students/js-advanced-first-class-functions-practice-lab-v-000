@@ -30,15 +30,10 @@ function driversByName(drivers) {
     return sortDrivers;
 }
 
-const cb = function (agg, el, i, arr) {
-  return agg + el.revenue
-}
-
 function totalRevenue(drivers) {
-  const tot = function(agg, el, i, arr) {
-    return agg + el.revenue;
-  }
-  return drivers.reduce(tot, 0);
+  return drivers.reduce(function (total, currentDriver) {
+    return currentDriver.revenue + total;
+  }, 0);
 }
 
 function averageRevenue(drivers) {
