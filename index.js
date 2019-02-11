@@ -11,3 +11,11 @@ const logDriversByHometown = function(drivers, location) {
     console.log(driver.name) }
   })
 }
+
+const driversByRevenue = function(drivers) {
+  return drivers = drivers.slice(0).sort(function(el1, el2) {
+    return el1.revenue - el2.revenue;
+  });
+};
+
+
