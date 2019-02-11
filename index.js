@@ -23,4 +23,8 @@ const driversByName = function(drivers) {
   });
 };
 
-
+const totalRevenue = function(drivers) {
+   drivers.forEach(function(driver) {
+      console.log(driver.revenue) drivers.reduce
+    })
+}
