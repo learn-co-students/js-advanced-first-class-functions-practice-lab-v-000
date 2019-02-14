@@ -20,8 +20,7 @@ const logDriversByHometown = function (drivers, location) {
   });
 }
 
-// Returns NEW drivers array sorted by revenue from low to high.
-// slice() makes a copy and doesn't destruct original drivers array
+// Returns NEW drivers array (without destructing original) sorted by revenue from low to high.
 const driversByRevenue = function (drivers) {
   return drivers.slice().sort(function (driverOne, driverTwo) {
     return driverOne.revenue - driverTwo.revenue;
