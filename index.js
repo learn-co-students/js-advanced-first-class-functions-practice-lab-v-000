@@ -15,7 +15,34 @@ const logDriversByHometown = function (drivers, location) {
 };
 
 const driversByRevenue = function(drivers) {
-    drivers.sort(function (, b) {
-        return 
+    let newDrivers = [...drivers];
+    newDrivers.sort(function (a, b) {
+        return a['revenue'] - b['revenue'];
     });
+    return newDrivers;
 };
+
+const driversByName = function(drivers) {
+    let newDrivers = [...drivers];
+    newDrivers.sort(function (a, b) {
+        return a['name'].localeCompare(b['name']);
+    });
+    return newDrivers;    
+}
+
+const totalRevenue = function(drivers) {
+    let sum = 0;
+    drivers.forEach(function (driver) {
+      sum += driver['revenue'];
+    });
+    return sum;
+}
+
+const averageRevenue = function(drivers) {
+    let sum = 0;
+    drivers.forEach(function (driver) {
+      sum += driver['revenue'];
+    });
+    return (sum/drivers.length);
+    //Dont know how to user .reduce() yet
+}
