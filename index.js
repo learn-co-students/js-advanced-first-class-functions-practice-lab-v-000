@@ -34,18 +34,14 @@ function driversByRevenue(drivers) {
     });
  };
 
+//takes in drivers array of objects
 function totalRevenue(drivers) {
-    
-    const revenueArray = drivers.map(driver => driver.revenue)
-    console.log(revenueArray)
-    const reducer = (currentValue, driver.revenue) => { return currentValue + revenue ;}
-    //console.log(drivers.reduce(reducer));
+    //totalRevenue accumulates the total revenue of all drivers by adding each driver revenue to the total Revenue variable
+    const totalRevenue = (currentValue, driver) => currentValue + driver.revenue;
+    //returns the sum of the revenue earned by each driver.
+    return drivers.reduce(totalRevenue, 0)
 }
 
-//function totalRevenue(drivers) {
-//const totalRevenue = (drivers.revenue + totalRevenue)
-//return drivers.reduce((revenue, totalRevenue) => {
-    //return totalRevenue + drivers.revenue;
-//});
-//};
-
+function averageRevenue(drivers) {
+    return totalRevenue(drivers)/drivers.length
+}
