@@ -26,8 +26,7 @@ function driversByName(drivers) {
 
 function totalRevenue(drivers) {
 	return drivers.reduce(function (total, currentDriver) {
-		total += currentDriver.revenue;
-		return total;
+		return total += currentDriver.revenue;
 	}, 0);
 }
 
