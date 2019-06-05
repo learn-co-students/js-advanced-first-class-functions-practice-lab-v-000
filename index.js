@@ -13,15 +13,17 @@ function logDriversByHometown(drivers, hometown){
 }
 
 function driversByRevenue(drivers){
+    const copyDrivers = [...drivers];
     const sortedDrivers = function(driver1, driver2){
-    return driver1['revenue'] - driver2['revenue'];
+     return driver1['revenue'] - driver2['revenue'];
     };
-    return drivers.sort(sortedDrivers);
+    return copyDrivers.sort(sortedDrivers);
 }
 
-
-// const numberSorter = function (num1, num2) {
-//     return num1 - num2;
-//   };
-   
-//   primes.sort(numberSorter);
+function driversByName(drivers){
+    const copyDrivers = [...drivers];
+    const sortedDrivers = function(driver1, driver2){
+     return driver1['name'].localeCompare(driver2['name']);
+    };
+    return copyDrivers.sort(sortedDrivers);
+}
