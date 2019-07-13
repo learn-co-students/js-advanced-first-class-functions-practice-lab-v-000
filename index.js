@@ -4,12 +4,22 @@ function callback(el) {
   console.log(el.name);
 };
 
-function aCallback(el) {
-  console.log("top");
-  console.log(el.hometown);
-  console.log("bottom");
+const logDriverNames = function(drivers){
+  drivers.forEach( function (driver){
+      callback(driver)
+      //console.log(driver.name);
+  })
 };
 
-const logDriverNames = function(drivers){drivers.forEach(callback)};
+const logDriversByHometown = function(drivers,hometown){
+  drivers.forEach( function(driver){
+    if (driver.hometown === hometown) {
+      callback(driver)
+      //console.log(driver.name);
+    }
+  })
+};
 
-const logDriversByHometown = function(drivers,hometown){drivers.forEach(aCallback)};
+const driversByRevenue = function(drivers){
+  drivers.sort();
+};
