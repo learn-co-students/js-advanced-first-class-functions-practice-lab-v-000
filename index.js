@@ -20,13 +20,42 @@ const logDriversByHometown = function(drivers,hometown){
   })
 };
 
-const driversByRevenue = function(drivers) {
-  drivers.sort(function (a, b) {
-     a.localeCompare(b);
-  });
-};
 // const driversByRevenue = function(drivers) {
-//   drivers.sort(function (a, b) {
-//      a.localeCompare(b);
+//   return drivers.sort(function (a, b) {
+//      return a.revenue - b.revenue;
 //   });
 // };
+
+const driversByRevenue = function(drivers) {
+  return drivers.slice().sort(function (a, b) {
+     return a.revenue - b.revenue;
+  });
+};
+
+const driversByName = function(drivers) {
+  return drivers.slice().sort(function (a, b) {
+    // console.log(a)
+    // console.log(b)
+    let aVar = a.name
+    let bVar = b.name
+     return aVar.localeCompare(bVar);
+  });
+};
+
+
+const totalRevenue = function(drivers) {
+return drivers.reduce((total, currentDriver) =>
+    {
+      // console.log("This is total")
+      // console.log(total)
+      // console.log("This is currentDriver")
+      // console.log(currentDriver)
+      return total + currentDriver.revenue },0);
+};
+
+const averageRevenue = function(drivers) {
+  let numberOfDrivers = drivers.length;
+  let result = totalRevenue(drivers)/  numberOfDrivers;
+  console.log(totalRevenue(drivers))
+  return result;
+};
