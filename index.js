@@ -15,10 +15,10 @@ const logDriversByHometown = function(drivers, hometown) {
 
 const driversByRevenue = function(drivers) {
   let driversCopy = [...drivers];
-  let sortedByRevenue = function(a, b) {
+  driversCopy.sort(function(a, b) {
     return a.revenue - b.revenue;
-  };
-  return driversCopy.sort(sortedByRevenue);
+  });
+  return driversCopy;
 };
 
 const driversByName = function(drivers) {
@@ -29,18 +29,28 @@ const driversByName = function(drivers) {
   return driversCopy;
 };
 
+// const totalRevenue = function(drivers) {
+//   let revenue = 0;
+//   drivers.forEach(function(driver) {
+//     revenue += driver.revenue;
+//   });
+//   return revenue;
+// };
+
 const totalRevenue = function(drivers) {
-  let revenue = 0;
-  drivers.forEach(function(driver) {
-    revenue += driver.revenue;
-  });
-  return revenue;
+  return drivers.reduce(function(total, driver) {
+    return driver.revenue + total;
+  }, 0);
 };
 
+// const averageRevenue = function(drivers) {
+//   let revenue = 0;
+//   drivers.forEach(function(driver) {
+//     revenue += driver.revenue;
+//   });
+//   return revenue / drivers.length;
+// };
+
 const averageRevenue = function(drivers) {
-  let revenue = 0;
-  drivers.forEach(function(driver) {
-    revenue += driver.revenue;
-  });
-  return revenue / drivers.length;
+  return totalRevenue(drivers) / drivers.length;
 };
