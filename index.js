@@ -31,11 +31,11 @@ const driversByName = function(drivers) {
 };
 
 const totalRevenue = function(drivers) {
-  drivers.reduce(function(agg, el, i, arr) {
-    console.log('The aggregate up to this point is:', agg);
-    console.log('The index of the current element is:', i);
-    console.log("The current element's revenue is:", el.revenue);
-    console.log('----------------');
-    console.log(agg + el.revenue);
+  return drivers.reduce(function(agg, el) {
+    return agg + el.revenue;
   }, 0);
+};
+
+const averageRevenue = function(drivers) {
+  return totalRevenue(drivers) / drivers.length;
 };
