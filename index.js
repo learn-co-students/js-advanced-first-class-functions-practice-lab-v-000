@@ -25,7 +25,6 @@ function logDriverNames(drivers) {
 function driversByRevenue(drivers) {
   let copyArr = [];
   copyArr = drivers;
-  console.log(drivers);
   copyArr.sort(function (a, b) {
     return a.revenue - b.revenue;
   });
