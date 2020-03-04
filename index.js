@@ -6,13 +6,6 @@ function logDriverNames(drivers) {
   drivers.forEach(logName);
 }
 
-
-// logByMatchingHometown = function (el) {
-//   if (el.hometown === location) {
-//     console.log(driver.name);
-//   }
-// };
-
 function logDriversByHometown(drivers, location) {
   drivers.forEach(e => {
     if (e.hometown === location) {
@@ -21,12 +14,23 @@ function logDriversByHometown(drivers, location) {
   });
 }
 
+function driversByRevenue(drivers) {
+  let copyArr = drivers.slice();
+  copyArr.sort((a, b) => (a.revenue > b.revenue) ? 1 : -1);
+  return copyArr;
+}
 
+function driversByName(drivers) {
+  let copyArr = drivers.slice();
+  copyArr.sort((a, b) => (a.name > b.name) ? 1 : -1);
+  return copyArr;
+}
 
-// function driversByRevenue(drivers) {
-//   // let copyArr = [];
-//   let copyArr = drivers;
-//   copyArr.sort(function (a, b) {
-//     return a.revenue - b.revenue;
-//   });
-// }
+const addRevenue = function (agg, el) {
+  return agg + el.revenue;
+};
+
+function totalRevenue(drivers) {
+  let copyArr = drivers.slice();
+  return copyArr.reduce(addRevenue, 0);
+}
