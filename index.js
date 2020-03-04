@@ -31,6 +31,18 @@ const addRevenue = function (agg, el) {
 };
 
 function totalRevenue(drivers) {
-  let copyArr = drivers.slice();
-  return copyArr.reduce(addRevenue, 0);
+  return drivers.reduce(addRevenue, 0);
+}
+
+const average = function (agg, el, i, arr) {
+  agg += el.revenue;
+  if (i === arr.length-1) {
+    return agg/arr.length;
+  } else {
+    return agg;
+  }
+}
+
+function averageRevenue(drivers) {
+  return drivers.reduce(average, 0);
 }
