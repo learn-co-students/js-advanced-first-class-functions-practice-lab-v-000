@@ -6,26 +6,27 @@ function logDriverNames(drivers) {
   drivers.forEach(logName);
 }
 
+
 // logByMatchingHometown = function (el) {
-//   if driver.hometown === location{
-//     console.log(driver.name)
+//   if (el.hometown === location) {
+//     console.log(driver.name);
 //   }
-// }
+// };
 
-// function logDriversByHometown(drivers, location) {
-//   drivers.forEach(e => {
-//     if (driver.hometown === location) {
-//       console.log(driver.name)
-//     }
-//   });
-// }
-
-
-
-function driversByRevenue(drivers) {
-  let copyArr = [];
-  copyArr = drivers;
-  copyArr.sort(function (a, b) {
-    return a.revenue - b.revenue;
+function logDriversByHometown(drivers, location) {
+  drivers.forEach(e => {
+    if (e.hometown === location) {
+      logName(e);
+    }
   });
 }
+
+
+
+// function driversByRevenue(drivers) {
+//   // let copyArr = [];
+//   let copyArr = drivers;
+//   copyArr.sort(function (a, b) {
+//     return a.revenue - b.revenue;
+//   });
+// }
